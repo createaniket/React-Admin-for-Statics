@@ -1,0 +1,83 @@
+.app-container {
+  max-width: 100vw;
+  margin: 00 auto;
+  padding: 00 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .app-body{
+
+    margin: 00 !important;
+  }
+}
+
+
+
+.app-header {
+  margin-bottom: 20px;
+}
+
+.app-logo {
+  margin-right: 20px;
+}
+
+.app-header-title {
+  text-align: left;
+}
+
+.app-header-title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.app-header-title p {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.app-body {
+  margin-top: 20px;
+  // border: 3px solid green;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.app-body-content-item {
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.app-body-content-item-second{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  // border: 2px solid red;
+  width: 10vw;
+
+
+}
+
+.app-body-content-item img {
+  width: 50%;
+  max-width: 170px;
+  margin-bottom: 10px;
+}
+
+.app-body-content-item p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+.col-3 {
+  flex: 0 0 auto;
+  width: 20%;
+}

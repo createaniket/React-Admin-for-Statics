@@ -27,7 +27,10 @@ const chartData = {
         left: 0
       }
     },
-    colors: ['#4680ff', '#2ed8b6'],
+    
+        // colors: ['#4680ff', '#2ed8b6'],
+        colors: ['#015488', '#2ed8b6'],
+
     fill: {
       opacity: [1, 1]
     },

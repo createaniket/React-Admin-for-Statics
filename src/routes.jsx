@@ -6,6 +6,7 @@ import Loader from './components/Loader/Loader';
 import AdminLayout from './layouts/AdminLayout';
 
 import { BASE_URL } from './config/constant';
+// import MembersLayout from 'layouts/MembersLayout';
 
 // ==============================|| ROUTES ||============================== //
 
@@ -51,12 +52,17 @@ export const routes = [
     element: lazy(() => import('./views/auth/reset-password/ResetPassword1'))
   },
   {
+    exact: 'true',
+    path: '/members/add/data/xlss',
+    element: lazy(() => import('./views/MemberDashboard/Memberdashboard'))
+  },
+  {
     path: '*',
     layout: AdminLayout,
     routes: [
       {
         exact: 'true',
-        path: '/app/dashboard/analytics',
+        path: '/app/admin/dashboard/analytics',
         element: lazy(() => import('./views/dashboard'))
       },
       {
@@ -99,9 +105,11 @@ export const routes = [
         path: '*',
         exact: 'true',
         element: () => <Navigate to={BASE_URL} />
-      }
+      },
+
+
     ]
-  }
+  },
 ];
 
 export default renderRoutes;

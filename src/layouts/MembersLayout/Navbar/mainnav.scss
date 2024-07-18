@@ -1,0 +1,31 @@
+.mainnavbar-member{
+
+    border: 2px solid red;
+    background-color: #015488;
+
+
+}
+
+.mainnavbar-member {
+    border: 2px solid red;
+    background-color: #015488;
+    color: #fff !important;
+  
+    .navbar-brand,
+    .nav-link,
+    .nav-item,
+    .dropdown-item {
+      color: #fff !important;
+    }
+
+     .navbar-brand{
+
+        background: none;
+     }
+  
+    .nav-link:hover,
+    .dropdown-item:hover {
+      color: #fff !important;
+    }
+  }
+  

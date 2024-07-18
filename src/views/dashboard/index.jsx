@@ -94,7 +94,7 @@ const DashAnalytics = () => {
                 <Card.Body>
                   <Row>
                     <Col sm="auto">
-                      <span>Customers</span>
+                      <span>Members</span>
                     </Col>
                     <Col className="text-end">
                       <h2 className="mb-0">826</h2>
@@ -129,7 +129,7 @@ const DashAnalytics = () => {
                 <Card.Body>
                   <Row>
                     <Col sm="auto">
-                      <span>Customers</span>
+                      <span>Members</span>
                     </Col>
                     <Col className="text-end">
                       <h2 className="mb-0 text-white">826</h2>

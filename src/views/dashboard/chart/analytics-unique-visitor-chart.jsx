@@ -39,12 +39,12 @@ const chartData = {
         }
       }
     },
-    colors: ['#73b4ff', '#59e0c5'],
+    colors: ['#73b4ff', '#59e0c5', "#FFC0CB"],
     fill: {
       type: 'gradient',
       gradient: {
         shade: 'light',
-        gradientToColors: ['#4099ff', '#2ed8b6'],
+        gradientToColors: ['#4099ff', '#2ed8b6', "#FFC0CB"],
         shadeIntensity: 0.5,
         type: 'horizontal',
         opacityFrom: 1,
@@ -54,7 +54,7 @@ const chartData = {
     },
     markers: {
       size: 5,
-      colors: ['#4099ff', '#2ed8b6'],
+      colors: ['#4099ff', '#2ed8b6', "#FFC0CB"],
       opacity: 0.9,
       strokeWidth: 2,
       hover: {
@@ -67,12 +67,16 @@ const chartData = {
   },
   series: [
     {
-      name: 'Arts',
+      name: 'Members',
       data: [20, 50, 30, 60, 30, 50]
     },
     {
-      name: 'Commerce',
+      name: 'Buyers',
       data: [60, 30, 65, 45, 67, 35]
+    },
+    {
+      name: 'Unique',
+      data: [28, 45, 45, 54, 37, 91]
     }
   ]
 };
