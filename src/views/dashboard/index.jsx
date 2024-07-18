@@ -58,7 +58,7 @@ const DashAnalytics = () => {
               title: 'Revenue',
               class: 'bg-c-yellow',
               icon: 'feather icon-repeat',
-              primaryText: '$42,562',
+              primaryText: 'INR 42,562',
               secondaryText: 'This Month',
               extraText: '$5,032'
             }}

@@ -23,46 +23,17 @@ const menuItems = {
       children: [
         {
           id: 'component',
-          title: 'Component',
+          title: 'Trade',
           type: 'collapse',
           icon: 'feather icon-box',
           children: [
             {
               id: 'button',
-              title: 'Button',
+              title: 'Members Contribution',
               type: 'item',
-              url: '/basic/button'
+              url: '/trade/cotibutions'
             },
-            {
-              id: 'badges',
-              title: 'Badges',
-              type: 'item',
-              url: '/basic/badges'
-            },
-            {
-              id: 'breadcrumb-pagination',
-              title: 'Breadcrumb & Pagination',
-              type: 'item',
-              url: '/basic/breadcrumb-pagination'
-            },
-            {
-              id: 'collapse',
-              title: 'Collapse',
-              type: 'item',
-              url: '/basic/collapse'
-            },
-            {
-              id: 'typography',
-              title: 'Typography',
-              type: 'item',
-              url: '/basic/typography'
-            },
-            {
-              id: 'tooltip-popovers',
-              title: 'Tooltip & Popovers',
-              type: 'item',
-              url: '/basic/tooltip-popovers'
-            }
+        
           ]
         }
       ]
@@ -102,32 +73,7 @@ const menuItems = {
         }
       ]
     },
-    {
-      id: 'support',
-      title: 'Support',
-      type: 'group',
-      icon: 'icon-support',
-      children: [
-        {
-          id: 'sample-page',
-          title: 'Sample Page',
-          type: 'item',
-          url: '/sample-page',
-          classes: 'nav-item',
-          icon: 'feather icon-sidebar'
-        },
-        // {
-        //   id: 'documentation',
-        //   title: 'Documentation',
-        //   type: 'item',
-        //   icon: 'feather icon-help-circle',
-        //   classes: 'nav-item',
-        //   url: 'https://codedthemes.gitbook.io/gradient-able-react/',
-        //   target: true,
-        //   external: true
-        // }
-      ]
-    }
+    
   ]
 };
 

@@ -65,37 +65,16 @@ export const routes = [
         path: '/app/admin/dashboard/analytics',
         element: lazy(() => import('./views/dashboard'))
       },
-      {
-        exact: 'true',
-        path: '/basic/button',
-        element: lazy(() => import('./views/ui-elements/BasicButton'))
-      },
-      {
-        exact: 'true',
-        path: '/basic/badges',
-        element: lazy(() => import('./views/ui-elements/BasicBadges'))
-      },
-      {
-        exact: 'true',
-        path: '/basic/breadcrumb-pagination',
-        element: lazy(() => import('./views/ui-elements/BasicBreadcrumbPagination'))
-      },
-      {
-        exact: 'true',
-        path: '/basic/collapse',
-        element: lazy(() => import('./views/ui-elements/BasicCollapse'))
-      },
 
-      {
-        exact: 'true',
-        path: '/basic/typography',
-        element: lazy(() => import('./views/ui-elements/BasicTypography'))
-      },
-      {
-        exact: 'true',
-        path: '/basic/tooltip-popovers',
-        element: lazy(() => import('./views/ui-elements/BasicTooltipsPopovers'))
-      },
+
+
+
+
+      // {
+      //   exact: 'true',
+      //   path: '/trade/cotibutions',
+      //   element: lazy(() => import('./views/ui-elements/BasicTooltipsPopovers'))
+      // },
       {
         exact: 'true',
         path: '/sample-page',
