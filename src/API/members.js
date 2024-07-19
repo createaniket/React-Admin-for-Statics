@@ -1,9 +1,10 @@
 import axiosInstance from './axiosInstance';
 
-export const fetchUsers = async () => {
+export const fetchAllUsers = async () => {
   try {
-    const response = await axiosInstance.get('/users');
-    return response.data;
+    const response = await axiosInstance.get('/user/getall');
+    console.log("esrdtyjukcfgfhjk", response)
+    return response.data.members;
   } catch (error) {
     console.error('Error fetching users:', error);
     throw error;

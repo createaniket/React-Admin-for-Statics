@@ -31,7 +31,7 @@ const menuItems = {
               id: 'button',
               title: 'Members Contribution',
               type: 'item',
-              url: '/trade/cotibutions'
+              url: '/trade/contibutions'
             },
         
           ]

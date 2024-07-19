@@ -70,11 +70,11 @@ export const routes = [
 
 
 
-      // {
-      //   exact: 'true',
-      //   path: '/trade/cotibutions',
-      //   element: lazy(() => import('./views/ui-elements/BasicTooltipsPopovers'))
-      // },
+      {
+        exact: 'true',
+        path: '/trade/contibutions',
+        element: lazy(() => import('./views/MemberDashboard/Trade-UI/Memberslist/Memberslist'))
+      },
       {
         exact: 'true',
         path: '/sample-page',
