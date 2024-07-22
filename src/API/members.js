@@ -21,4 +21,15 @@ export const fetchUserById = async (id) => {
   }
 };
 
+
+export const VerifyUser = async (id) => {
+  try {
+    const response = await axiosInstance.post(`/user/verify/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching user with id ${id}:`, error);
+    throw error;
+  }
+};
+
 // Add other user-related API calls here

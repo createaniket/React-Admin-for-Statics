@@ -75,6 +75,15 @@ export const routes = [
         path: '/trade/contibutions',
         element: lazy(() => import('./views/MemberDashboard/Trade-UI/Memberslist/Memberslist'))
       },
+
+
+      {
+        exact: 'true',
+        path: '/trade/contibutions/member',
+        element: lazy(() => import('./views/MemberDashboard/Trade-UI/Tradelist/Tradelist'))
+      },
+
+
       {
         exact: 'true',
         path: '/sample-page',

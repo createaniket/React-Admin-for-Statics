@@ -2,35 +2,44 @@ import React, { useEffect, useState } from 'react';
 
 import { MaterialReactTable, useMaterialReactTable } from 'material-react-table';
 
-import { fetchAllUsers } from 'API/members';
+import { fetchAllUsers, VerifyUser } from 'API/members';
 import { Link } from 'react-router-dom';
 
 import DefaultAvatar from '../../../../assets/images/user/avatar_5_default.png';
+
+// import {Usercolumns} from "../../../DataTable/"
+import '../../../DataTable/Datatable.scss';
 
 const Memberslist = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const usersData = await fetchAllUsers();
-        setUsers(usersData);
-      } catch (error) {
-        console.error('Failed to fetch users', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const getUsers = async () => {
+    try {
+      const usersData = await fetchAllUsers();
+      setUsers(usersData);
+    } catch (error) {
+      console.error('Failed to fetch users', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  
+  useEffect(() => {
     getUsers();
   }, []);
+
+  const handleVerifyUser = (id) => {
+    VerifyUser(id);
+    getUsers();
+  };
 
   const actionColumn = [
     {
       accessorKey: 'action',
       header: 'Action',
-      width: 200,
+      width: 250,
       Cell: ({ row }) => {
         return (
           <div className="cellAction">
@@ -41,6 +50,14 @@ const Memberslist = () => {
             <Link to={`/admin-resources/edit/${row.original._id}`} style={{ textDecoration: 'none' }} state={row.original}>
               <div className="editButton">Edit</div>
             </Link>
+
+            {row.original.verified ? (
+              <></>
+            ) : (
+              <div className="deleteButton" onClick={() => handleVerifyUser(row.original._id)}>
+                Verify
+              </div>
+            )}
           </div>
         );
       }
@@ -49,46 +66,33 @@ const Memberslist = () => {
 
   const columns = [
     {
-      accessorKey: '_id',
-      header: 'ID',
-      size: 70
+      accessorKey: 'uniqueMemberId',
+      header: 'Member Id',
+      size: 180
     },
-
     {
-      accessorKey: 'name', // give a unique key for the first custom column
+      accessorKey: 'name',
       header: 'Member',
-      size: 100,
+      size: 200,
       Cell: ({ row }) => (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            // border:"1px solid red",
-            width: 'fit-content'
-          }}
-        >
-          <img
-            src={row.original.avatar ? `http://localhost:9000/${row.original.avatar}` : DefaultAvatar} // Have to add http url
-            alt=""
-            style={{
-              width: '60px',
-              height: '60px',
-              borderRadius: '50%',
-              marginRight: '20px',
-              objectFit: 'cover'
-            }}
-          />
+        <div className="cellWithImg">
+          <img src={row.original.avatar ? `http://localhost:9000/${row.original.avatar}` : DefaultAvatar} alt="" className="cellImg" />
           {row.original.name}
         </div>
       )
     },
+    {
+      accessorKey: 'verified',
+      header: 'Verified',
+      size: 150,
+      Cell: ({ row }) => <div className={`cellWithStatus ${row.original.verified}`}>{row.original.verified ? 'Yes' : 'No'}</div>
+    },
 
     {
-      accessorKey: 'verified', // give a unique key for the first custom column
-      header: 'Verified',
-      size: 100,
-      Cell: ({ row }) => <div>{row.original.verified ? 'Yes' : 'No'}</div>
+      accessorKey: 'verified',
+      header: 'Trade Contribution',
+      size: 300,
+      Cell: ({ row }) => <Link className={`cellWithStatus ${row.original.verified}`}>View Trades</Link>
     }
   ];
 
@@ -98,10 +102,10 @@ const Memberslist = () => {
     enableRowSelection: true,
     enableStickyHeader: true,
     enableSorting: true,
-
     muiTableContainerProps: { sx: { maxHeight: '600px' } },
-
     muiTableBodyRowProps: { sx: { height: '50px' } },
+    enableColumnResizing: true,
+
     getRowId: (row) => row._id //give each row a more useful id
   });
 
@@ -111,9 +115,12 @@ const Memberslist = () => {
 
   return (
     <div>
-      Memberslist
-      <div className="membersdatatable_section">
-        <MaterialReactTable table={table} />
+      <div className="datatabelmain">
+        <div className="membersdatatable_section">
+          <div className="dataTableTitle">Members</div>
+
+          <MaterialReactTable table={table} />
+        </div>
       </div>
     </div>
   );
