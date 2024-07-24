@@ -11,7 +11,7 @@ import NavSearch from './NavSearch';
 const NavLeft = () => {
   return (
     <React.Fragment>
-      <ListGroup as="ul" bsPrefix=" " className="navbar-nav me-auto">
+      <ListGroup as="ul" bsPrefix=" " className="navbar-nav">
         <ListGroup.Item as="li" bsPrefix=" " className="nav-item">
           <NavSearch />
         </ListGroup.Item>

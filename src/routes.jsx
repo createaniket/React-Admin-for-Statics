@@ -85,7 +85,7 @@ export const routes = [
 
       {
         exact: 'true',
-        path: '/events/floorplan',
+        path: '/events/viewall',
         element: lazy(() => import('./views/dashboard/Events/Events'))
       },
 
@@ -95,7 +95,22 @@ export const routes = [
         element: lazy(() => import('./views/dashboard/Events/Addevents/Addevents'))
       },
 
+      {
+        exact: 'true',
+        path: '/events/hall/add',
+        element: lazy(() => import('./views/dashboard/Events/Halls/Addhall'))
+      },
 
+      {
+        exact: 'true',
+        path: '/events/hall/all',
+        element: lazy(() => import('./views/dashboard/Events/Halls/Halls'))
+      },
+      {
+        exact: 'true',
+        path: '/events/stall/all',
+        element: lazy(() => import('./views/dashboard/Events/Stall/AdminstallsLayout/Adminstalls'))
+      },
       {
         exact: 'true',
         path: '/sample-page',

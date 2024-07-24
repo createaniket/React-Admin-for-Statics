@@ -11,6 +11,8 @@ import * as actionType from '../../../store/actions';
 // assets
 import logo from '../../../assets/images/logonew.jpg';
 
+import NewLogo from '../../../assets/images/mainlogonew.png'
+
 // ==============================|| NAV BAR ||============================== //
 
 const NavBar = () => {
@@ -46,15 +48,18 @@ const NavBar = () => {
         <Link to="#" className={toggleClass.join(' ')} id="mobile-collapse" onClick={navToggleHandler}>
           <span />
         </Link>
-        <Link to="#" className="b-brand">
+        {/* <Link to="#" className="b-brand">
           <img id="main-logo" src={logo} alt="" className="logo" />
-        </Link>
+        </Link> */}
         <Link to="#" className={moreClass.join(' ')} onClick={() => setMoreToggle(!moreToggle)}>
           <i className="feather icon-more-vertical" />
         </Link>
       </div>
       <div style={{ justifyContent: 'end' }} className={collapseClass.join(' ')}>
         <NavLeft />
+        <Link to="#" className="b-brand">
+          <img id="main-logo-new" src={NewLogo} alt="" className="logo" />
+        </Link>
         <NavRight />
       </div>
     </React.Fragment>

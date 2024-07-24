@@ -9,7 +9,12 @@
 .b-brand {
   display: flex;
   align-items: center;
-  // border: 10px solid red;
+    // border: 2px solid red;
+    margin: 0 auto;
+    padding: 0;
+    width: 20%;
+    background-color: #fff;
+    margin: 00 auto;
 
   .b-bg {
     background: $primary-color;
@@ -30,7 +35,7 @@
     font-size: 16px;
   }
   img{
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -1821,3 +1826,6 @@
     }
   }
 }
+
+
+

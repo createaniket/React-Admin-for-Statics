@@ -9,14 +9,14 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // project import
 import OrderCard from '../../components/Widgets/Statistic/OrderCard';
-import SocialCard from '../../components/Widgets/Statistic/SocialCard';
+// import SocialCard from '../../components/Widgets/Statistic/SocialCard';
 
 import uniqueVisitorChart from './chart/analytics-unique-visitor-chart';
 import customerChart from './chart/analytics-cuatomer-chart';
 import customerChart1 from './chart/analytics-cuatomer-chart-1';
 
 // assets
-import avatar1 from '../../assets/images/user/avatar-1.jpg';
+import avatar1 from '../../assets/images/user/tricolor.png';
 import imgGrid1 from '../../assets/images/gallery-grid/img-grd-gal-1.jpg';
 import imgGrid2 from '../../assets/images/gallery-grid/img-grd-gal-2.jpg';
 import imgGrid3 from '../../assets/images/gallery-grid/img-grd-gal-3.jpg';
@@ -24,6 +24,23 @@ import imgGrid3 from '../../assets/images/gallery-grid/img-grd-gal-3.jpg';
 // ==============================|| DASHBOARD ANALYTICS ||============================== //
 
 const DashAnalytics = () => {
+
+  // useEffect(() => {
+  //   const checkToken = () => {
+  //     const adToken = localStorage.getItem('AdToken');
+  //     if (!adToken) {
+  //       // Redirect to login page if AdToken is not present
+  //       navigate('/login');
+  //     }
+  //   };
+
+  //   checkToken();
+  // }, [navigate]);
+
+
+    // avigate to -> /goods-exporter/react/auth/signin-1
+
+
   return (
     <React.Fragment>
       <Row>
@@ -31,11 +48,11 @@ const DashAnalytics = () => {
         <Col md={6} xl={3}>
           <OrderCard
             params={{
-              title: 'Orders Received',
+              title: 'Members',
               class: 'bg-c-blue',
-              icon: 'feather icon-shopping-cart',
+              icon: 'feather icon-user',
               primaryText: '486',
-              secondaryText: 'Completed Orders',
+              secondaryText: 'Membership Paymets',
               extraText: '351'
             }}
           />
@@ -60,7 +77,7 @@ const DashAnalytics = () => {
               icon: 'feather icon-repeat',
               primaryText: 'INR 42,562',
               secondaryText: 'This Month',
-              extraText: '$5,032'
+              extraText: 'INR 5,032'
             }}
           />
         </Col>
@@ -70,9 +87,9 @@ const DashAnalytics = () => {
               title: 'Total Profit',
               class: 'bg-c-red',
               icon: 'feather icon-award',
-              primaryText: '$9,562',
+              primaryText: 'INR 9,562',
               secondaryText: 'This Month',
-              extraText: '$542'
+              extraText: 'INR 542'
             }}
           />
         </Col>
@@ -80,7 +97,7 @@ const DashAnalytics = () => {
         <Col md={12} xl={6}>
           <Card>
             <Card.Header>
-              <h5>Unique Visitor</h5>
+              <h5>Visitor</h5>
             </Card.Header>
             <Card.Body className="ps-4 pt-4 pb-0">
               <Chart {...uniqueVisitorChart} />
@@ -94,12 +111,12 @@ const DashAnalytics = () => {
                 <Card.Body>
                   <Row>
                     <Col sm="auto">
-                      <span>Members</span>
+                      <span>Buyers</span>
                     </Col>
                     <Col className="text-end">
-                      <h2 className="mb-0">826</h2>
+                      <h2 className="mb-0">829</h2>
                       <span className="text-c-green">
-                        8.2%
+                        10.2%
                         <i className="feather icon-trending-up ms-1" />
                       </span>
                     </Col>
@@ -118,7 +135,7 @@ const DashAnalytics = () => {
                         <i className="fas fa-circle text-primary f-10 mx-2" />
                         182
                       </h3>
-                      <span className="ms-3">Return</span>
+                      <span className="ms-3">Existing</span>
                     </Col>
                   </Row>
                 </Card.Body>
@@ -162,7 +179,7 @@ const DashAnalytics = () => {
           </Row>
         </Col>
 
-        <Col lg={4} md={12}>
+        {/* <Col lg={4} md={12}>
           <SocialCard
             params={{
               icon: 'fa fa-envelope-open',
@@ -185,8 +202,8 @@ const DashAnalytics = () => {
               label: 'Check them out'
             }}
           />
-        </Col>
-        <Col lg={8} md={12}>
+        </Col> */}
+        <Col xs={12} className="d-flex justify-content-center">
           <Card>
             <Card.Header>
               <h5>Activity Feed</h5>
@@ -260,7 +277,7 @@ const DashAnalytics = () => {
         <Col sm={12}>
           <Card>
             <Card.Header>
-              <Card.Title as="h5">Campaign Monitor</Card.Title>
+              <Card.Title as="h5">Basic Analytics</Card.Title>
             </Card.Header>
             <Card.Body className="p-0">
               <div className="table-card" style={{ height: '362px' }}>
@@ -269,15 +286,15 @@ const DashAnalytics = () => {
                     <thead>
                       <tr>
                         <th>
-                          <span>Campaign date</span>
+                          <span>Date of Transaction</span>
                         </th>
                         <th>
-                          <span>Click</span>
+                          <span>Number of Transactions</span>
                         </th>
                         <th>
-                          <span>Cost</span>
+                          <span>Amount of Transaction in Lacs</span>
                         </th>
-                        <th>
+                        {/* <th>
                           <span>CTR</span>
                         </th>
                         <th>
@@ -285,15 +302,15 @@ const DashAnalytics = () => {
                         </th>
                         <th>
                           <span>ECPI</span>
-                        </th>
-                        <th>
-                          <span>ROI</span>
-                        </th>
+                        </th> */}
                         <th>
                           <span>Revenue</span>
                         </th>
+                        {/* <th>
+                          <span>Revenue</span>
+                        </th> */}
                         <th>
-                          <span>Conversions</span>
+                          <span>Increase in Sale</span>
                         </th>
                       </tr>
                     </thead>
@@ -302,77 +319,77 @@ const DashAnalytics = () => {
                         <td>08-11-2016</td>
                         <td>786</td>
                         <td>485</td>
-                        <td>769</td>
+                        {/* <td>769</td>
                         <td>45,3%</td>
-                        <td>6,7%</td>
+                        <td>6,7%</td> */}
                         <td>8,56</td>
-                        <td>10:55</td>
+                        {/* <td>10:55</td> */}
                         <td>33.8%</td>
                       </tr>
                       <tr>
                         <td>15-10-2016</td>
                         <td>786</td>
                         <td>523</td>
-                        <td>736</td>
+                        {/* <td>736</td>
                         <td>78,3%</td>
-                        <td>6,6%</td>
+                        <td>6,6%</td> */}
                         <td>7,56</td>
-                        <td>4:30</td>
+                        {/* <td>4:30</td> */}
                         <td>76.8%</td>
                       </tr>
                       <tr>
                         <td>08-08-2017</td>
                         <td>624</td>
                         <td>436</td>
-                        <td>756</td>
+                        {/* <td>756</td>
                         <td>78,3%</td>
-                        <td>6,4%</td>
+                        <td>6,4%</td> */}
                         <td>9,45</td>
-                        <td>9:05</td>
+                        {/* <td>9:05</td> */}
                         <td>8.63%</td>
                       </tr>
                       <tr>
                         <td>11-12-2017</td>
                         <td>423</td>
                         <td>123</td>
-                        <td>756</td>
+                        {/* <td>756</td>
                         <td>78,6%</td>
-                        <td>45,6%</td>
+                        <td>45,6%</td> */}
                         <td>6,85</td>
-                        <td>7:45</td>
+                        {/* <td>7:45</td> */}
                         <td>33.8%</td>
                       </tr>
                       <tr>
                         <td>05-06-2015</td>
                         <td>465</td>
                         <td>463</td>
-                        <td>456</td>
+                        {/* <td>456</td>
                         <td>68,6%</td>
-                        <td>76,6%</td>
+                        <td>76,6%</td> */}
                         <td>7,56</td>
-                        <td>8:45</td>
+                        {/* <td>8:45</td> */}
                         <td>39.8%</td>
                       </tr>
                       <tr>
                         <td>08-11-2016</td>
                         <td>786</td>
                         <td>485</td>
-                        <td>769</td>
+                        {/* <td>769</td>
                         <td>45,3%</td>
-                        <td>6,7%</td>
+                        <td>6,7%</td> */}
                         <td>8,56</td>
-                        <td>10:55</td>
+                        {/* <td>10:55</td> */}
                         <td>33.8%</td>
                       </tr>
                       <tr>
                         <td>15-10-2016</td>
                         <td>786</td>
                         <td>523</td>
-                        <td>736</td>
+                        {/* <td>736</td>
                         <td>78,3%</td>
-                        <td>6,6%</td>
+                        <td>6,6%</td> */}
                         <td>7,56</td>
-                        <td>4:30</td>
+                        {/* <td>4:30</td> */}
                         <td>76.8%</td>
                       </tr>
                     </tbody>

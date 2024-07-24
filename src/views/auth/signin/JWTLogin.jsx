@@ -1,15 +1,13 @@
 import React from 'react';
-
-// react-bootstrap
 import { Row, Col, Alert, Button } from 'react-bootstrap';
-
-// third party
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-
-// ==============================|| JWT LOGIN ||============================== //
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const JWTLogin = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Formik
@@ -22,6 +20,23 @@ const JWTLogin = () => {
           email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
           password: Yup.string().max(255).required('Password is required')
         })}
+        onSubmit={async (values, { setErrors, setSubmitting }) => {
+          try {
+            const response = await axios.post('http://localhost:9000/admin/login', {
+              email: values.email,
+              password: values.password
+            });
+            const { token } = response.data;
+
+            localStorage.setItem('Adtoken', token);
+
+            navigate('/goods-exporter/react/app/admin/dashboard/analytics');
+          } catch (error) {
+            setErrors({ submit: error.response ? error.response.data.message : 'Wrong Credentials' });
+          } finally {
+            setSubmitting(false);
+          }
+        }}
       >
         {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
           <form noValidate onSubmit={handleSubmit}>
@@ -50,7 +65,7 @@ const JWTLogin = () => {
               {touched.password && errors.password && <small className="text-danger form-text">{errors.password}</small>}
             </div>
 
-            <div className="custom-control custom-checkbox  text-start mb-4 mt-2">
+            <div className="custom-control custom-checkbox text-start mb-4 mt-2">
               <input type="checkbox" className="custom-control-input mx-2" id="customCheck1" />
               <label className="custom-control-label" htmlFor="customCheck1">
                 Save credentials.
@@ -73,21 +88,6 @@ const JWTLogin = () => {
           </form>
         )}
       </Formik>
-      <Row>
-        <Col sm={12}>
-          <h5 className="my-3"> OR </h5>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col sm={12}>
-          <Button variant="danger">
-            <i className="fa fa-lock" /> Sign in with Google
-          </Button>
-        </Col>
-      </Row>
-
-      <hr />
     </>
   );
 };

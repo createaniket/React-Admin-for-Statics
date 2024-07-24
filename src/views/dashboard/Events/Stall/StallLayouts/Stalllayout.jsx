@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Stalllayout.scss'
+import '../Stalllayout.scss'
 
 const Stalllayout = () => {
     const [stalls, setStalls] = useState([]);

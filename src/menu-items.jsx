@@ -46,23 +46,45 @@ const menuItems = {
       icon: 'icon-ui',
       children: [
         {
-          id: 'floorplan',
+          id: 'events',
           title: 'Events',
           type: 'collapse',
           icon: 'feather icon-box',
           children: [
             {
-              id: 'buttons',
+              id: 'buttons-allevents',
+              title: 'All Events',
+              type: 'item',
+              url: '/events/viewall'
+            },
+            {
+              id: 'addevent',
               title: 'Add Event',
               type: 'item',
               url: '/events/add'
             },
+
             {
-              id: 'buttons',
-              title: 'Floor Plan',
+              id: 'allhalls',
+              title: 'All Halls',
               type: 'item',
-              url: '/events/floorplan'
+              url: '/events/hall/all'
             },
+
+            {
+              id: 'addhall',
+              title: 'Add Hall',
+              type: 'item',
+              url: '/events/hall/add'
+            },
+
+            {
+              id: 'allstalls',
+              title: 'All Stalls',
+              type: 'item',
+              url: '/events/stall/all'
+            },
+
         
           ]
         },

@@ -11,7 +11,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import ChatList from './ChatList';
 
 // assets
-import avatar1 from '../../../../assets/images/user/avatar-1.jpg';
+import avatar1 from '../../../../assets/images/user/tricolor.png';
 import avatar2 from '../../../../assets/images/user/avatar-2.jpg';
 import avatar3 from '../../../../assets/images/user/avatar-3.jpg';
 import avatar4 from '../../../../assets/images/user/avatar-4.jpg';
@@ -23,21 +23,21 @@ const NavRight = () => {
 
   const notiData = [
     {
-      name: 'Joseph William',
+      name: 'Ramesh Tedulkar',
       image: avatar2,
-      details: 'Purchase New Theme and make payment',
+      details: 'Becomes The Buyer',
       activity: '30 min'
     },
     {
-      name: 'Sara Soudein',
+      name: 'Anshika',
       image: avatar3,
       details: 'currently login',
       activity: '30 min'
     },
     {
-      name: 'Suzen',
+      name: 'Ashish Sharma',
       image: avatar4,
-      details: 'Purchase New Theme and make payment',
+      details: 'Submitted Trade List',
       activity: 'yesterday'
     }
   ];
@@ -78,13 +78,13 @@ const NavRight = () => {
                       <img className="img-radius" src={avatar1} alt="Generic placeholder" />
                       <Card.Body className="p-0">
                         <p>
-                          <strong>John Doe</strong>
+                          <strong>Admin </strong>
                           <span className="n-time text-muted">
                             <i className="icon feather icon-clock me-2" />
-                            30 min
+                            5 min
                           </span>
                         </p>
-                        <p>New ticket Added</p>
+                        <p>Currently Logged in</p>
                       </Card.Body>
                     </Card>
                   </ListGroup.Item>
@@ -121,7 +121,7 @@ const NavRight = () => {
             </Dropdown.Menu>
           </Dropdown>
         </ListGroup.Item>
-        <ListGroup.Item as="li" bsPrefix=" ">
+        {/* <ListGroup.Item as="li" bsPrefix=" ">
           <Dropdown>
             <Dropdown.Toggle as={Link} variant="link" to="#" className="displayChatbox" onClick={() => setListOpen(true)}>
               <i className="icon feather icon-mail" />
@@ -130,7 +130,7 @@ const NavRight = () => {
               </span>
             </Dropdown.Toggle>
           </Dropdown>
-        </ListGroup.Item>
+        </ListGroup.Item> */}
         <ListGroup.Item as="li" bsPrefix=" ">
           <Dropdown align="end" className="drp-user">
             <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic">
@@ -155,11 +155,11 @@ const NavRight = () => {
                     <i className="feather icon-user" /> Profile
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item as="li" bsPrefix=" ">
+                {/* <ListGroup.Item as="li" bsPrefix=" ">
                   <Link to="#" className="dropdown-item">
                     <i className="feather icon-mail" /> My Messages
                   </Link>
-                </ListGroup.Item>
+                </ListGroup.Item> */}
                 <ListGroup.Item as="li" bsPrefix=" ">
                   <Link to="#" className="dropdown-item">
                     <i className="feather icon-lock" /> Lock Screen
