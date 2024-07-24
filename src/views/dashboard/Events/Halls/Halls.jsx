@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Hallscard from './Hallscard';
 import { fetchAllHalls } from '../../../../API/hall';
+import './Halls.scss'
 
 const Halls = () => {
   const [halls, setHalls] = useState(null);

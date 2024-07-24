@@ -1,0 +1,86 @@
+.home-aboutsection{
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+
+    .home-abt-pic{
+
+  
+        width: 50%;
+
+        // img{
+        //     width: 100%;
+        // }
+
+    }
+        
+        .home-abt-content{
+            
+            padding: 50px;
+            
+            
+            .home-abt-head{
+                
+                font-weight: 600;
+                font-size: 28px;
+                color: #000;
+            }
+
+
+        }
+
+
+
+}
+
+
+.home-learn-howto-export{
+
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+
+
+
+
+
+    .home-abt-pic-export{
+
+        width: 50%;
+        img{
+            width: 100%;
+        }
+
+     
+    }
+
+
+    .home-abt-content{
+            
+        padding: 50px;
+        
+        
+        .home-abt-head{
+            
+            font-weight: 600;
+            font-size: 28px;
+            color: #000;
+        }
+        .homeabt-cont{
+            margin-bottom: 50px;
+        }
+        .home-cstmble-btn{
+
+            font-weight: 700;
+            background-color: #015488;
+            padding: 10px 20px;
+            margin: 50px 00;
+            color: #fff;
+        }
+
+
+
+    }
+}

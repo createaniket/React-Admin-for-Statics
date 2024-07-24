@@ -28,12 +28,17 @@ const menuItems = {
           icon: 'feather icon-box',
           children: [
             {
-              id: 'button',
-              title: 'Members Contribution',
+              id: 'members-trade',
+              title: 'Members',
               type: 'item',
               url: '/trade/contibutions'
             },
-        
+            {
+              id: 'button-mbmb',
+              title: 'Members Contribution',
+              type: 'item',
+              url: '/trade/contibutions/member'
+            },        
           ]
         }
       ]

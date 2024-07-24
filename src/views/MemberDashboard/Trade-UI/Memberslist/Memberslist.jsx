@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
-
 import { MaterialReactTable, useMaterialReactTable } from 'material-react-table';
-
 import { fetchAllUsers, VerifyUser } from 'API/members';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';  // Updated import statement
 
 import DefaultAvatar from '../../../../assets/images/user/avatar_5_default.png';
-
-// import {Usercolumns} from "../../../DataTable/"
 import '../../../DataTable/Datatable.scss';
 
 const Memberslist = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+
+
 
   const getUsers = async () => {
     try {
@@ -25,7 +23,6 @@ const Memberslist = () => {
     }
   };
 
-  
   useEffect(() => {
     getUsers();
   }, []);
@@ -44,13 +41,11 @@ const Memberslist = () => {
         return (
           <div className="cellAction">
             <Link to={`/admin-resources/${row.original._id}`} style={{ textDecoration: 'none' }} state={row.original}>
-              <div className="viewButton">view</div>
+              <div className="viewButton">View</div>
             </Link>
-
             <Link to={`/admin-resources/edit/${row.original._id}`} style={{ textDecoration: 'none' }} state={row.original}>
               <div className="editButton">Edit</div>
             </Link>
-
             {row.original.verified ? (
               <></>
             ) : (
@@ -87,12 +82,11 @@ const Memberslist = () => {
       size: 150,
       Cell: ({ row }) => <div className={`cellWithStatus ${row.original.verified}`}>{row.original.verified ? 'Yes' : 'No'}</div>
     },
-
     {
-      accessorKey: 'verified',
+      accessorKey: 'tradeContribution',
       header: 'Trade Contribution',
       size: 300,
-      Cell: ({ row }) => <Link className={`cellWithStatus ${row.original.verified}`}>View Trades</Link>
+      Cell: ({ row }) => <Link  to={'/'} className={`cellWithStatus ${row.original.verified}`} >View Trades</Link>
     }
   ];
 
@@ -105,7 +99,6 @@ const Memberslist = () => {
     muiTableContainerProps: { sx: { maxHeight: '600px' } },
     muiTableBodyRowProps: { sx: { height: '50px' } },
     enableColumnResizing: true,
-
     getRowId: (row) => row._id //give each row a more useful id
   });
 
@@ -118,7 +111,6 @@ const Memberslist = () => {
       <div className="datatabelmain">
         <div className="membersdatatable_section">
           <div className="dataTableTitle">Members</div>
-
           <MaterialReactTable table={table} />
         </div>
       </div>

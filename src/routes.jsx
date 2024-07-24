@@ -36,6 +36,12 @@ const renderRoutes = (routes = []) => (
 );
 
 export const routes = [
+
+  {
+    exact: 'true',
+    path: '/',
+    element: lazy(() => import('./layouts/UserLayout/Home/Home'))
+  },
   {
     exact: 'true',
     path: '/auth/signup-1',
@@ -65,10 +71,6 @@ export const routes = [
         path: '/app/admin/dashboard/analytics',
         element: lazy(() => import('./views/dashboard'))
       },
-
-
-
-
 
       {
         exact: 'true',

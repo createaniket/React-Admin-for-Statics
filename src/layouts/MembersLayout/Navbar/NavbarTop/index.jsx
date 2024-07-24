@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import '../../../../assets/scss/themes/UserNav/_usernav.scss';
+import LogoNew from '../../../../assets/images/mainlogonew.png'
+
 
 const NavbarTop = () => {
   return (
@@ -8,28 +10,15 @@ const NavbarTop = () => {
       <Container className="app-container">
         <Row className="app-body">
           <Col xs={3} className="app-body-content-item">
-            <Image src="https://www.servicesepc.org/public/themes/frontendTheme/newassets/images/logo.png" alt="India Emblem" fluid />
+            {/* <Image src={LogoNew} alt="India Emblem" fluid /> */}
+            <Image src="http://sportsgoodsindia.org/images/logo_New.jpg" alt="PIB Logo" fluid />
+          </Col>
+          <Col xs={3} className="app-body-content-item">
+            <Image src="http://sportsgoodsindia.org/images/ISPO_2013.jpg" alt="PIB Logo" fluid />
           </Col>
           <Col xs={3} className="app-body-content-item">
             <Image
-              src="https://www.servicesepc.org/public/themes/frontendTheme/newassets/images/commerce-logo.png"
-              alt="India Emblem"
-              fluid
-            />
-          </Col>
-          <Col xs={3} className="app-body-content-item">
-            <Image
-              src="https://www.servicesepc.org/public/themes/frontendTheme/newassets/images/is-logo.png"
-              alt="India Serves Logo"
-              fluid
-            />
-          </Col>
-          <Col xs={3} className="app-body-content-item">
-            <Image src="https://www.servicesepc.org/public/themes/frontendTheme/newassets/images/pib.jpg" alt="PIB Logo" fluid />
-          </Col>
-          <Col xs={3} className="app-body-content-item">
-            <Image
-              src="https://www.servicesepc.org/public/themes/frontendTheme/newassets/images/is-logo.png"
+              src="http://sportsgoodsindia.org/images/India_Sporting_Goods_March_24N.jpg"
               alt="India Serves Logo"
               fluid
             />
