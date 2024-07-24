@@ -29,7 +29,7 @@ const Events = () => {
             {events === null ? <p>Loading...</p> :
                 events.length > 0 ? events.map(event => (
                     <Eventscard key={event._id} event={event} />
-                )) : <p>No Data</p>}
+                )) : <p>No Data to show here</p>}
         </div>
     );
 };
