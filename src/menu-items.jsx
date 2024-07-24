@@ -38,6 +38,36 @@ const menuItems = {
         }
       ]
     },
+
+    {
+      id: 'events',
+      title: 'Events',
+      type: 'group',
+      icon: 'icon-ui',
+      children: [
+        {
+          id: 'floorplan',
+          title: 'Events',
+          type: 'collapse',
+          icon: 'feather icon-box',
+          children: [
+            {
+              id: 'buttons',
+              title: 'Add Event',
+              type: 'item',
+              url: '/events/add'
+            },
+            {
+              id: 'buttons',
+              title: 'Floor Plan',
+              type: 'item',
+              url: '/events/floorplan'
+            },
+        
+          ]
+        },
+      ]
+    },
     // {
     //   id: 'auth',
     //   title: 'Authentication',

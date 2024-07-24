@@ -1,0 +1,23 @@
+.floor-plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+}
+
+.stall {
+    padding: 20px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.stall.available {
+    background-color: green;
+}
+
+.stall.reserved {
+    background-color: orange;
+}
+
+.stall.confirmed {
+    background-color: red;
+}

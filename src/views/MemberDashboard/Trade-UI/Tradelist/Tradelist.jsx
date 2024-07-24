@@ -4,6 +4,7 @@ import { MaterialReactTable, useMaterialReactTable } from 'material-react-table'
 
 import {SingleUserTradeColumns} from '../../../DataTable/Datatable'
 import { Link } from 'react-router-dom';
+import './Tradelist.scss'
 
 
 const Tradelist = () => {

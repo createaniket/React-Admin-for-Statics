@@ -83,6 +83,18 @@ export const routes = [
         element: lazy(() => import('./views/MemberDashboard/Trade-UI/Tradelist/Tradelist'))
       },
 
+      {
+        exact: 'true',
+        path: '/events/floorplan',
+        element: lazy(() => import('./views/dashboard/Events/Events'))
+      },
+
+      {
+        exact: 'true',
+        path: '/events/add',
+        element: lazy(() => import('./views/dashboard/Events/Addevents/Addevents'))
+      },
+
 
       {
         exact: 'true',
