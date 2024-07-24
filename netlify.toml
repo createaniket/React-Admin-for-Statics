@@ -3,7 +3,7 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18.14.2" # Specify your Node.js version
+  NODE_VERSION = "18.14.2"
 
-[[plugins]]
-  package = "@netlify/plugin-vite"
+[build]
+  command = "npm install && npm run build"
