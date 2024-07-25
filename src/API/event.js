@@ -4,7 +4,6 @@ import axiosInstance from './axiosInstance';
 export const fetchAllEvents = async () => {
   try {
     const response = await axiosInstance.get('/events/getall');
-    console.log("efvhjbevjhvvjkbvjkwsss", response)
     return response.data.events;
   } catch (error) {
     console.error('Error fetching events:', error);

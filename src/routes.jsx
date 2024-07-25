@@ -42,6 +42,20 @@ export const routes = [
     path: '/',
     element: lazy(() => import('./layouts/UserLayout/Home/Home'))
   },
+
+  {
+    exact: 'true',
+    path: '/events/all',
+    element: lazy(() => import('./views/dashboard/Events/Commonevents/Allevents'))
+  },
+
+
+
+  {
+    exact: 'true',
+    path: '/user/auth',
+    element: lazy(() => import('./layouts/UserLayout/UserAuth/UserAuth'))
+  },
   {
     exact: 'true',
     path: '/auth/signup-1',

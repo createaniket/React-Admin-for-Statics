@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { fetchAllEvents } from 'API/event';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {addHall} from '../../../../API/hall'
 
@@ -10,6 +11,14 @@ const AddHall = () => {
     const [layoutFile, setLayoutFile] = useState(null);
     const [error, setError] = useState('');
     const navigate = useNavigate();
+ 
+
+
+    const [events, setEvents] = useState([]);
+
+    console.log("wkjebjkwebjk", events)
+
+
 
     const handleFileChange = (e) => {
         setLayoutFile(e.target.files[0]);
@@ -29,11 +38,25 @@ const AddHall = () => {
             addHall(formData)
             alert('Hall added successfully!');
             console.log(response.data);
-            navigate('/'); // Navigate to the halls list page or any other page you prefer
+            navigate('/events/hall/all'); // Navigate to the halls list page or any other page you prefer
         } catch (error) {
             setError(error.response?.data?.error || 'An error occurred');
         }
     };
+
+
+    useEffect(() => {
+        const fetchEvents = async () => {
+          try {
+            const allEvents = await fetchAllEvents();
+            setEvents(allEvents);
+          } catch (error) {
+            console.error('Failed to fetch events', error);
+          }
+        };
+    
+        fetchEvents();
+      }, []);
 
     return (
         <div className="container">
@@ -73,7 +96,7 @@ const AddHall = () => {
                         required
                     />
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label htmlFor="eventId">Event ID</label>
                     <input
                         type="text"
@@ -83,6 +106,23 @@ const AddHall = () => {
                         onChange={(e) => setEventId(e.target.value)}
                         required
                     />
+                </div> */}
+                    <div className="form-group">
+                    <label htmlFor="eventId">Event</label>
+                    <select
+                        id="eventId"
+                        className="form-control"
+                        value={eventId}
+                        onChange={(e) => setEventId(e.target.value)}
+                        required
+                    >
+                        <option value="">Select Event</option>
+                        {events.map((event) => (
+                            <option key={event._id} value={event._id}>
+                                {event.name}
+                            </option>
+                        ))}
+                    </select>
                 </div>
                 <div className="form-group">
                     <label htmlFor="layout">Layout File</label>

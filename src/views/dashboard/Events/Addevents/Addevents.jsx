@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { fetchAllEvents, fetchEventById, addEvent } from '../../../../API/event';
+import { useNavigate } from 'react-router-dom';
+import { fetchAllEvents, addEvent } from '../../../../API/event';
 
 const Addevents = () => {
   const [events, setEvents] = useState([]);
-  const [singleEvent, setSingleEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: '',
@@ -15,6 +15,8 @@ const Addevents = () => {
     registrationDeadline: '',
     images: []
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -66,6 +68,7 @@ const Addevents = () => {
     try {
       await addEvent(data);
       alert('Event added successfully!');
+      navigate('/events/viewall')
       // Optionally, you can reset the form here
       setFormData({
         name: '',
@@ -82,17 +85,7 @@ const Addevents = () => {
     }
   };
 
-  const fetchSingleEvent = async (id) => {
-    setLoading(true);
-    try {
-      const event = await fetchEventById(id);
-      setSingleEvent(event);
-    } catch (error) {
-      console.error('Failed to fetch event', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+
 
   return (
     <div>
@@ -125,7 +118,7 @@ const Addevents = () => {
               ></textarea>
             </div>
             <div className="form-group">
-              <label htmlFor="guidelines">Guidelines:</label>
+              <label htmlFor="guidelines">Address:</label>
               <textarea
                 id="guidelines"
                 name="guidelines"
